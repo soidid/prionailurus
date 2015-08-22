@@ -4,8 +4,14 @@ body
   margin 0
   padding 0
 
-.app.header
+header.app
   height header-height
+  padding 10px
+
+.fix-header
+  @media screen and (min-width: 600px)
+    position fixed
+  
 
 .app.content
   width 100%
@@ -20,13 +26,33 @@ body
   height 100%
   display flex
   flex-flow column
+  @media screen and (min-width: 600px)
+    z-index -1
+  @media screen and (max-width: 600px)
+    z-index 100
 
 .content .middle
 
 .content .right
+  @media screen and (min-width: 600px)
+    flex 1
 
 .timeline
   position relative
 
 .intro
   height 100px
+  @media screen and (max-width: 600px)
+    display none
+
+.mobile
+  @media screen and (min-width: 600px)
+    display none
+  @media screen and (max-width: 600px)
+    position fixed
+    bottom 0px
+    left 0px
+    z-index 101
+    width 100%
+    text-align center
+
